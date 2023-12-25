@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:id="@+id/nav_group1">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/home_white"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_cart"
+            android:icon="@drawable/cart_white"
+            android:title="Cart" />
+        <item
+            android:id="@+id/nav_orders"
+            android:icon="@drawable/shopping_bag_white"
+            android:title="Orders" />
+        <item
+            android:id="@+id/nav_brochures"
+            android:icon="@drawable/brochure_white"
+            android:title="Brochures" />
+        <item
+            android:id="@+id/nav_product_comparison"
+            android:icon="@drawable/compare_white"
+            android:title="Product Comparison" />
+        <item
+            android:id="@+id/nav_expense_management"
+            android:icon="@drawable/ic_money_black"
+            android:title="Expense Management"/>
+        <item
+            android:id="@+id/nav_receipt_management"
+            android:icon="@drawable/ic_receipt"
+            android:title="Receipt Management"/>
+        <item
+            android:id="@+id/nav_route_comparison"
+            android:icon="@drawable/route_white"
+            android:title="Route Comparison" />
+    </group>
+
+    <group android:id="@+id/nav_group2">
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/person_white"
+            android:title="Profile" />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/logout_white"
+            android:title="Logout" />
+    </group>
+
+</menu>

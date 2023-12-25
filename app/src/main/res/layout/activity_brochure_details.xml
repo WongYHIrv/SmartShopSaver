@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.BrochureDetailsActivity">
+
+    <!--Toolbar-->
+    <RelativeLayout
+        android:id="@+id/toolbarRl"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@drawable/toolbar_bg">
+
+        <ImageButton
+            android:id="@+id/toolbarBackBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:padding="10dp"
+            android:src="@drawable/back_white" />
+
+        <TextView
+            android:id="@+id/toolbarTitleTv"
+            style="@style/TextAppearance.Material3.BodyLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Brochure Details"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/downloadBrochureBtn"
+        android:layout_below="@id/toolbarRl"
+        android:padding="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/pdfThumbnailIv"
+                android:layout_width="90dp"
+                android:layout_height="110dp"
+                android:layout_centerHorizontal="true"
+                android:background="@color/gray" />
+
+            <ProgressBar
+                android:id="@+id/pdfThumbnailPb"
+                android:layout_width="90dp"
+                android:layout_height="110dp"
+                android:layout_centerHorizontal="true"
+                android:padding="10dp" />
+
+            <!--Brochure Name-->
+            <TextView
+                android:id="@+id/brochureNameLabelTv"
+                style="@style/TextAppearance.Material3.LabelLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/pdfThumbnailIv"
+                android:layout_marginTop="10dp"
+                android:text="Name"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/brochureNameTv"
+                style="@style/TextAppearance.Material3.LabelSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/brochureNameLabelTv"
+                tools:text="@tools:sample/lorem[3]" />
+
+            <!--Brochure Description-->
+            <TextView
+                android:id="@+id/brochureDescriptionLabelTv"
+                style="@style/TextAppearance.Material3.LabelLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/brochureNameTv"
+                android:layout_marginTop="8dp"
+                android:text="Description"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/brochureDescriptionTv"
+                style="@style/TextAppearance.Material3.LabelSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/brochureDescriptionLabelTv"
+                tools:text="@tools:sample/lorem[20]" />
+
+            <!--Brochure Category-->
+            <TextView
+                android:id="@+id/brochureCategoryLabelTv"
+                style="@style/TextAppearance.Material3.LabelLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/brochureDescriptionTv"
+                android:layout_marginTop="8dp"
+                android:text="Category"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/brochureCategoryTv"
+                style="@style/TextAppearance.Material3.LabelSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/brochureCategoryLabelTv"
+                tools:text="@tools:sample/lorem[1]" />
+
+            <!--Brochure Date-->
+            <TextView
+                android:id="@+id/brochureDateLabelTv"
+                style="@style/TextAppearance.Material3.LabelLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/brochureCategoryTv"
+                android:layout_marginTop="8dp"
+                android:text="Date"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/brochureDateTv"
+                style="@style/TextAppearance.Material3.LabelSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/brochureDateLabelTv"
+                tools:text="@tools:sample/date/ddmmyy" />
+
+            <!--Brochure Pages-->
+            <TextView
+                android:id="@+id/brochurePagesLabelTv"
+                style="@style/TextAppearance.Material3.LabelLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/brochureDateTv"
+                android:layout_marginTop="8dp"
+                android:text="Pages"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/brochurePagesTv"
+                style="@style/TextAppearance.Material3.LabelSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/brochurePagesLabelTv"
+                tools:text="141" />
+
+            <!--Brochure Size-->
+            <TextView
+                android:id="@+id/brochureSizeLabelTv"
+                style="@style/TextAppearance.Material3.LabelLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/brochurePagesTv"
+                android:layout_marginTop="8dp"
+                android:text="Size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/brochureSizeTv"
+                style="@style/TextAppearance.Material3.LabelSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/brochureSizeLabelTv"
+                tools:text="12.34 MB" />
+
+            <!--Views Count-->
+            <TextView
+                android:id="@+id/brochureViewsLabelTv"
+                style="@style/TextAppearance.Material3.LabelLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/brochureSizeTv"
+                android:layout_marginTop="8dp"
+                android:text="Views Count"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/brochureViewsTv"
+                style="@style/TextAppearance.Material3.LabelSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/brochureViewsLabelTv"
+                tools:text="92k" />
+
+            <!--Downloads Count-->
+            <TextView
+                android:id="@+id/brochureDownloadsLabelTv"
+                style="@style/TextAppearance.Material3.LabelLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/brochureViewsTv"
+                android:layout_marginTop="8dp"
+                android:text="Downloads Count"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/brochureDownloadsTv"
+                style="@style/TextAppearance.Material3.LabelSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/brochureDownloadsLabelTv"
+                tools:text="1.2k" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/downloadBrochureBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/readBrochureBtn"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:minHeight="@dimen/m_button_height"
+        android:text="Download"
+        app:icon="@drawable/download_white" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/readBrochureBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:minHeight="@dimen/m_button_height"
+        android:text="Read"
+        app:icon="@drawable/book_white" />
+
+</RelativeLayout>

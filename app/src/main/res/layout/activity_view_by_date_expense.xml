@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/view_by_dateLinearLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center|top"
+    android:background="@drawable/back01"
+    tools:context=".activities.ViewByDateExpense"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Toolbar -->
+    <RelativeLayout
+        android:id="@+id/toolbarRl"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@drawable/shape_toolbar02">
+
+        <!-- Back Button -->
+        <ImageButton
+            android:id="@+id/backBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_back_black"/>
+
+        <!-- Toolbar Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Expense Analytics"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/anyChart2LinearLayout"
+        android:layout_below="@id/toolbarRl"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2.7"
+        android:paddingTop="5dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+        <com.anychart.AnyChartView
+            android:id="@+id/chart2"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_weight="2.7"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/filterTv"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Select Filter Options"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="50dp"
+        android:textSize="16dp"
+        android:layout_below="@id/anyChart2LinearLayout"
+        android:textColor="@android:color/black"/>
+
+    <LinearLayout
+        android:id="@+id/selectionFilterLl"
+        android:layout_below="@id/filterTv"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp">
+
+        <Button
+            android:id="@+id/viewByOneDateButton"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:text="View By \nOne Date"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp"
+            android:textSize="12sp"/>
+
+        <Button
+            android:id="@+id/viewBetweenTwoDateButton"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:text="View Between \nTwo Date"
+            android:layout_weight="1"
+            android:textSize="12sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout22"
+        android:layout_below="@id/selectionFilterLl"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:orientation="horizontal"
+        android:layout_weight=".8"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:weightSum="3"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/selectDateTextView"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Select Date"
+            android:textSize="12sp"
+            android:layout_weight="1"
+            android:visibility="gone"
+            android:textColor="@android:color/darker_gray"/>
+
+        <Button
+            android:id="@+id/filterButton"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Filter"
+            android:layout_weight="1"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/selectDate2TextView"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Select Date"
+            android:textSize="12sp"
+            android:layout_weight="1"
+            android:visibility="gone"
+            android:textColor="@android:color/darker_gray"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/viewMoreInfoLl"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linearLayout22"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/viewMoreInfo"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:text="View more info"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/gridviewlinearLayout"
+        android:layout_weight="3.5"
+        android:layout_below="@id/viewMoreInfoLl"
+        android:layout_height="200dp"
+        android:layout_width="wrap_content"
+        android:paddingTop="15dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+        <GridView
+            android:id="@+id/gridView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:numColumns="2"/>
+    </LinearLayout>
+
+
+
+</RelativeLayout>
+
+    <!-- code reserve
+    <LinearLayout
+            android:id="@+id/attributesLinearLayout"
+            android:layout_weight="3"
+            android:layout_height="0dp"
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:weightSum="4"
+            android:layout_gravity="start"
+            android:padding="10dp">
+            <TextView
+                android:id="@+id/higestExpensesTextView"
+                android:text="Highest Expenses: "
+                android:textSize="24sp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textColor="@android:color/white"
+                />
+            <TextView
+                android:id="@+id/lowestExpensesTextView"
+                android:text="Lowest Expenses: "
+                android:textSize="24sp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textColor="@android:color/white"
+                />
+             <TextView
+                android:id="@+id/averageExpensesTextView"
+                android:text="Average: "
+                android:textSize="24sp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textColor="@android:color/white"
+                />
+              <TextView
+                android:id="@+id/totalExpensesTextView"
+                android:text="Total: "
+                android:textSize="24sp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textColor="@android:color/white"
+                />
+        </LinearLayout>
+    -->

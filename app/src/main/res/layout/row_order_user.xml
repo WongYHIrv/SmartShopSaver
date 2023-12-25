@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="2dp"
+    app:cardUseCompatPadding="true"
+    app:contentPadding="8dp"
+    app:strokeColor="@android:color/transparent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/orderIdLabelTv"
+            style="@style/TextAppearance.Material3.BodyMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Order ID: " />
+
+        <TextView
+            android:id="@+id/orderIdTv"
+            style="@style/TextAppearance.Material3.BodyMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/orderIdLabelTv"
+            tools:text="121243" />
+
+        <ImageButton
+            android:id="@+id/reportBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="5dp"
+            android:background="@drawable/shape_button_bg"
+            android:padding="5dp"
+            android:src="@drawable/report_white" />
+
+        <TextView
+            android:id="@+id/dateLabelTv"
+            style="@style/TextAppearance.Material3.BodyMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/dateTv"
+            android:text="Date: " />
+
+        <TextView
+            android:id="@+id/dateTv"
+            style="@style/TextAppearance.Material3.BodyMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@+id/reportBtn"
+            tools:text="@tools:sample/date/ddmmyy" />
+
+        <TextView
+            android:id="@+id/sellerNameLabelTv"
+            style="@style/TextAppearance.Material3.BodyMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/orderIdLabelTv"
+            android:layout_marginTop="4dp"
+            android:text="Seller: " />
+
+        <TextView
+            android:id="@+id/sellerNameTv"
+            style="@style/TextAppearance.Material3.BodyMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/orderIdLabelTv"
+            android:layout_marginTop="4dp"
+            android:layout_toEndOf="@+id/sellerNameLabelTv"
+            tools:text="@tools:sample/full_names" />
+
+        <TextView
+            android:id="@+id/orderStatusTv"
+            style="@style/TextAppearance.Material3.BodyMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/orderIdLabelTv"
+            android:layout_marginTop="4dp"
+            android:layout_toStartOf="@+id/reportBtn"
+            android:textStyle="bold"
+            tools:text="In Progress" />
+
+        <TextView
+            android:id="@+id/priceSymbolTv"
+            style="@style/TextAppearance.Material3.BodyMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sellerNameLabelTv"
+            android:layout_marginTop="4dp"
+            android:text="@string/currency_symbol" />
+
+        <TextView
+            android:id="@+id/priceTv"
+            style="@style/TextAppearance.Material3.BodyMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sellerNameLabelTv"
+            android:layout_marginTop="4dp"
+            android:layout_toEndOf="@+id/priceSymbolTv"
+            tools:text="172.98" />
+
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="2dp"
+    app:cardUseCompatPadding="true"
+    app:contentPadding="8dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/shopIv"
+            android:layout_width="70dp"
+            android:layout_height="85dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/gray"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/ImageStyle_Corners_Rounded"
+            tools:src="@tools:sample/backgrounds/scenic" />
+
+        <TextView
+            android:id="@+id/shopNameTv"
+            style="@style/TextAppearance.Material3.BodyLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/shopIv"
+            tools:text="@tools:sample/full_names" />
+
+        <TextView
+            android:id="@+id/shopDescriptionTv"
+            style="@style/TextAppearance.Material3.BodyMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/shopNameTv"
+            android:layout_toEndOf="@id/shopIv"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:minLines="2"
+            tools:text="@tools:sample/lorem[10]" />
+
+        <TextView
+            android:id="@+id/priceLabelTv"
+            style="@style/TextAppearance.Material3.BodySmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/shopDescriptionTv"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/shopIv"
+            android:text="Price:" />
+
+        <TextView
+            android:id="@+id/priceSymbolTv"
+            style="@style/TextAppearance.Material3.BodySmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/shopDescriptionTv"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/priceLabelTv"
+            android:text="@string/currency_symbol" />
+
+        <TextView
+            android:id="@+id/priceTv"
+            style="@style/TextAppearance.Material3.BodySmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/shopDescriptionTv"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/priceSymbolTv"
+            tools:text="1.22" />
+
+        <TextView
+            android:id="@+id/dateLabelTv"
+            style="@style/TextAppearance.Material3.BodySmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/shopDescriptionTv"
+            android:layout_marginTop="5dp"
+            android:layout_toStartOf="@+id/dateTv"
+            android:text="Updated: " />
+
+        <TextView
+            android:id="@+id/dateTv"
+            style="@style/TextAppearance.Material3.BodySmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/shopDescriptionTv"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="5dp"
+            tools:text="@tools:sample/date/ddmmyy" />
+
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>

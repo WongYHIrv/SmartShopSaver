@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back01"
+    tools:context=".activities.ReceiptEditActivity">
+
+    <!-- Toolbar -->
+    <RelativeLayout
+        android:id="@+id/toolbarRl"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/shape_toolbar02">
+
+        <!-- Back Button -->
+        <ImageButton
+            android:id="@+id/backBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back_black"
+            android:background="@android:color/transparent"
+            android:padding="5dp"
+            android:layout_margin="10dp"/>
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="Edit Receipts"
+            android:textColor="@color/black"
+            android:textSize="16sp"/>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_below="@+id/toolbarRl"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- Input Resource Title -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/titleTil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
+                app:hintEnabled="true">
+
+                <EditText
+                    android:id="@+id/titleEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_receipt"
+                    android:drawablePadding="10dp"
+                    android:hint="Resource Title"
+                    android:inputType="textPersonName|textCapSentences"
+                    android:padding="10dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/gray"
+                    android:textSize="16sp"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Input Resource Description -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/descriptionTil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_below="@+id/titleTil"
+                android:layout_marginTop="10dp"
+                style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
+                app:hintEnabled="true">
+
+                <EditText
+                    android:id="@+id/descriptionEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_receipt"
+                    android:drawablePadding="10dp"
+                    android:hint="Resource Description"
+                    android:inputType="textMultiLine|textCapSentences"
+                    android:padding="10dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/gray"
+                    android:textSize="16sp"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/locationTil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_below="@+id/descriptionTil"
+                android:layout_marginTop="10dp"
+                style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
+                app:hintEnabled="true">
+
+                <EditText
+                    android:id="@+id/locationEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_location_gray"
+                    android:drawablePadding="10dp"
+                    android:hint="Location"
+                    android:inputType="textCapSentences"
+                    android:padding="10dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/gray"
+                    android:textSize="16sp"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/expenseAmtTil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_below="@+id/locationTil"
+                android:layout_marginTop="10dp"
+                style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
+                app:hintEnabled="true">
+
+                <EditText
+                    android:id="@+id/expenseAmtEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_money_gray"
+                    android:drawablePadding="10dp"
+                    android:hint="Expense Amount"
+                    android:inputType="textMultiLine|textCapSentences"
+                    android:padding="10dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/gray"
+                    android:textSize="16sp"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Update Button -->
+            <Button
+                android:id="@+id/submitBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginTop="10dp"
+                android:text="Update"
+                android:layout_below="@id/expenseAmtTil"
+                android:textColor="@color/white"/>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

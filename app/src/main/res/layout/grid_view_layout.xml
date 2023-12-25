@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/gridviewLineaLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:background="@drawable/shape">
+
+    <TextView
+        android:id="@+id/categoryTextView"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Category Type: "
+        android:textColor="@android:color/white"/>
+
+    <TextView
+        android:id="@+id/priceTextView"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Expense Amt  : "
+        android:textColor="@android:color/white"/>
+
+    <TextView
+        android:id="@+id/dateTextView"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Date Added    : "
+        android:textColor="@android:color/white"/>
+
+</LinearLayout>

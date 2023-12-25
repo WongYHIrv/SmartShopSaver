@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.BrochureListUserActivity">
+
+    <!--Toolbar-->
+    <RelativeLayout
+        android:id="@+id/toolbarRl"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@drawable/toolbar_bg">
+
+        <ImageButton
+            android:id="@+id/toolbarBackBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:padding="10dp"
+            android:src="@drawable/back_white" />
+
+        <TextView
+            android:id="@+id/toolbarTitleTv"
+            style="@style/TextAppearance.Material3.BodyLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Brochures"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+
+    <!--Search-->
+    <RelativeLayout
+        android:id="@+id/searchRl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbarRl"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp">
+
+        <!--MaterialCardView: Search Chats-->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/searchCv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/filterBtn"
+            app:cardCornerRadius="10dp"
+            app:cardUseCompatPadding="true">
+
+            <!--EditText: Input Query to search chats-->
+            <EditText
+                android:id="@+id/searchEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:drawableStart="@drawable/search_gray"
+                android:drawablePadding="10dp"
+                android:hint="Search"
+                android:padding="10dp" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <ImageButton
+            android:id="@+id/filterBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/shape_button_bg"
+            android:padding="5dp"
+            android:src="@drawable/filter_white" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/filterTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/searchRl"
+        android:layout_marginStart="10dp"
+        tools:text="All Brochures" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/brochureRv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/filterTv"
+        android:clipToPadding="false"
+        android:paddingBottom="75dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/row_brochure_seller" />
+
+</RelativeLayout>

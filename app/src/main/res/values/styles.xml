@@ -1,0 +1,21 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!--Adding styles to make different shapes for shapeable image view-->
+    <style name="ImageStyle_Circle">
+        <item name="cornerSize">50%</item>
+        <item name="cornerFamily">rounded</item> <!--possible values are rounded, cut-->
+    </style>
+
+    <style name="ImageStyle_Corners_Rounded">
+        <item name="cornerSize">10dp</item>
+        <item name="cornerFamily">rounded</item>
+    </style>
+
+    <style name="AlertDialogCustom">
+        <item name="android:background">@color/black</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:colorAccent">@color/white</item>
+    </style>
+
+</resources>

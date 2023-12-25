@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.ProductComparisonUserActivity">
+
+    <!--Toolbar-->
+    <RelativeLayout
+        android:id="@+id/toolbarRl"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@drawable/toolbar_bg">
+
+        <ImageButton
+            android:id="@+id/toolbarBackBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:padding="10dp"
+            android:src="@drawable/back_white" />
+
+        <TextView
+            android:id="@+id/toolbarTitleTv"
+            style="@style/TextAppearance.Material3.BodyLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Product Comparison"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbarRl">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="2dp"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="8dp"
+                app:strokeWidth="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/productInfoLabelTv"
+                        style="@style/TextAppearance.Material3.BodyLarge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Product Info"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:id="@+id/view1"
+                        android:layout_width="120dp"
+                        android:layout_height="0.5dp"
+                        android:layout_below="@+id/productInfoLabelTv"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@color/gray" />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/productImageIv"
+                        android:layout_width="70dp"
+                        android:layout_height="85dp"
+                        android:layout_below="@+id/view1"
+                        android:layout_marginEnd="8dp"
+                        android:background="@color/gray"
+                        android:scaleType="centerCrop"
+                        app:shapeAppearanceOverlay="@style/ImageStyle_Corners_Rounded"
+                        tools:src="@tools:sample/backgrounds/scenic" />
+
+                    <TextView
+                        android:id="@+id/productNameTv"
+                        style="@style/TextAppearance.Material3.BodyLarge"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view1"
+                        android:layout_toEndOf="@id/productImageIv"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        tools:text="@tools:sample/lorem[5]" />
+
+                    <TextView
+                        android:id="@+id/productDescriptionTv"
+                        style="@style/TextAppearance.Material3.BodySmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/productNameTv"
+                        android:layout_marginTop="5dp"
+                        android:layout_toEndOf="@id/productImageIv"
+                        android:ellipsize="end"
+                        android:lines="2"
+                        tools:text="@tools:sample/lorem[15]" />
+
+                    <TextView
+                        android:id="@+id/productCategoryTv"
+                        style="@style/TextAppearance.Material3.LabelSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/productDescriptionTv"
+                        android:layout_marginTop="5dp"
+                        android:layout_toEndOf="@id/productImageIv"
+                        android:ellipsize="end"
+                        android:lines="1"
+                        tools:text="@tools:sample/lorem[2]" />
+
+                    <TextView
+                        android:id="@+id/productCategorySeparatorTv"
+                        style="@style/TextAppearance.Material3.LabelSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/productDescriptionTv"
+                        android:layout_marginTop="5dp"
+                        android:layout_toEndOf="@id/productCategoryTv"
+                        android:text=" > " />
+
+                    <TextView
+                        android:id="@+id/productSubCategoryTv"
+                        style="@style/TextAppearance.Material3.LabelSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/productDescriptionTv"
+                        android:layout_marginTop="5dp"
+                        android:layout_toEndOf="@id/productCategorySeparatorTv"
+                        android:ellipsize="end"
+                        android:lines="1"
+                        tools:text="@tools:sample/lorem[2]" />
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="2dp"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="8dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/lowestPriceLabelTv"
+                            style="@style/TextAppearance.Material3.BodyLarge"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Lowest Price"
+                            android:textAlignment="center"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/lowestPriceSymbolTv"
+                            style="@style/TextAppearance.Material3.BodySmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/lowestPriceLabelTv"
+                            android:layout_marginTop="5dp"
+                            android:layout_toStartOf="@+id/lowestPriceTv"
+                            android:text="@string/currency_symbol"
+                            android:textAlignment="center" />
+
+                        <TextView
+                            android:id="@+id/lowestPriceTv"
+                            style="@style/TextAppearance.Material3.BodySmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/lowestPriceLabelTv"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:textAlignment="center"
+                            tools:text="2.93" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/highestPriceLabelTv"
+                            style="@style/TextAppearance.Material3.BodyLarge"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Highest Price"
+                            android:textAlignment="center"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/highestPriceSymbolTv"
+                            style="@style/TextAppearance.Material3.BodySmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/highestPriceLabelTv"
+                            android:layout_marginTop="5dp"
+                            android:layout_toStartOf="@+id/highestPriceTv"
+                            android:text="@string/currency_symbol"
+                            android:textAlignment="center" />
+
+                        <TextView
+                            android:id="@+id/highestPriceTv"
+                            style="@style/TextAppearance.Material3.BodySmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/highestPriceLabelTv"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:textAlignment="center"
+                            tools:text="12.29" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Product Sellers"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="120dp"
+                android:layout_height="0.5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="2dp"
+                android:background="@color/gray" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/shopsRv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/row_shop_comparison_user" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.RouteComparisonUserActivity">
+
+    <!--Toolbar-->
+    <RelativeLayout
+        android:id="@+id/toolbarRl"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@drawable/toolbar_bg">
+
+        <ImageButton
+            android:id="@+id/toolbarBackBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:padding="10dp"
+            android:src="@drawable/back_white" />
+
+        <TextView
+            android:id="@+id/toolbarTitleTv"
+            style="@style/TextAppearance.Material3.BodyLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Route Comparison"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/generateRouteBtn"
+        android:layout_below="@id/toolbarRl"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/TextAppearance.Material3.TitleLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Please Select Routes" />
+
+            <!--Route 1 Label-->
+            <TextView
+                style="@style/TextAppearance.Material3.TitleMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Route / Destination 1" />
+
+            <!--Route 1 Select-->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/selectShop1Cv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="10dp">
+
+                <TextView
+                    android:id="@+id/selectShop1Tv"
+                    style="@style/TextAppearance.Material3.BodySmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/down_double_gray"
+                    android:gravity="center_vertical"
+                    android:text="Choose Shop 1" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!--Route 1 Selected-->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/selectedShop1Cv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/selectedShop1Iv"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="10dp"
+                        android:background="@color/gray"
+                        android:scaleType="centerCrop"
+                        app:shapeAppearanceOverlay="@style/ImageStyle_Corners_Rounded"
+                        tools:src="@tools:sample/avatars" />
+
+                    <TextView
+                        android:id="@+id/shopName1Tv"
+                        style="@style/TextAppearance.Material3.TitleSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/selectedShop1Iv"
+                        tools:text="@tools:sample/full_names" />
+
+                    <TextView
+                        android:id="@+id/shopAddressLabel1Tv"
+                        style="@style/TextAppearance.Material3.LabelSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/shopName1Tv"
+                        android:layout_marginTop="5dp"
+                        android:layout_toEndOf="@id/selectedShop1Iv"
+                        android:text="Store Address:" />
+
+                    <TextView
+                        android:id="@+id/shopAddress1Tv"
+                        style="@style/TextAppearance.Material3.LabelSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/shopAddressLabel1Tv"
+                        android:layout_toEndOf="@id/selectedShop1Iv"
+                        android:ellipsize="end"
+                        android:lines="2"
+                        tools:text="@tools:sample/lorem[20]" />
+
+                    <TextView
+                        android:id="@+id/shopPhoneLabel1Tv"
+                        style="@style/TextAppearance.Material3.LabelSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/shopAddress1Tv"
+                        android:layout_marginTop="5dp"
+                        android:layout_toEndOf="@id/selectedShop1Iv"
+                        android:text="Phone Number: " />
+
+                    <TextView
+                        android:id="@+id/shopPhone1Tv"
+                        style="@style/TextAppearance.Material3.LabelSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/shopAddress1Tv"
+                        android:layout_marginTop="5dp"
+                        android:layout_toEndOf="@id/shopPhoneLabel1Tv"
+                        tools:text="@tools:sample/us_phones" />
+
+                    <TextView
+                        android:id="@+id/shopLatitudeLabel1Tv"
+                        style="@style/TextAppearance.Material3.LabelSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/shopPhone1Tv"
+                        android:layout_toEndOf="@id/selectedShop1Iv"
+                        android:text="Latitude: " />
+
+                    <TextView
+                        android:id="@+id/shopLatitude1Tv"
+                        style="@style/TextAppearance.Material3.LabelSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/shopPhone1Tv"
+                        android:layout_toEndOf="@id/shopLatitudeLabel1Tv"
+                        tools:text="12.34567890" />
+
+                    <TextView
+                        android:id="@+id/shopLongitudeLabel1Tv"
+                        style="@style/TextAppearance.Material3.LabelSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/shopLatitude1Tv"
+                        android:layout_toEndOf="@id/selectedShop1Iv"
+                        android:text="Longitude: " />
+
+                    <TextView
+                        android:id="@+id/shopLongitude1Tv"
+                        style="@style/TextAppearance.Material3.LabelSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/shopLatitude1Tv"
+                        android:layout_toEndOf="@id/shopLongitudeLabel1Tv"
+                        tools:text="45.6789012" />
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <!--Route 2 Label-->
+            <TextView
+                style="@style/TextAppearance.Material3.TitleMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Route / Destination 2" />
+
+            <!--Route 2 Select-->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/selectShop2Cv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="10dp">
+
+                <TextView
+                    android:id="@+id/selectShop2Tv"
+                    style="@style/TextAppearance.Material3.BodySmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/down_double_gray"
+                    android:gravity="center_vertical"
+                    android:text="Choose Shop 2" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!--Route 2 Selected-->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/selectedShop2Cv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/selectedShop2Iv"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="10dp"
+                        android:background="@color/gray"
+                        android:scaleType="centerCrop"
+                        app:shapeAppearanceOverlay="@style/ImageStyle_Corners_Rounded"
+                        tools:src="@tools:sample/avatars" />
+
+                    <TextView
+                        android:id="@+id/shopName2Tv"
+                        style="@style/TextAppearance.Material3.TitleSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/selectedShop2Iv"
+                        tools:text="@tools:sample/full_names" />
+
+                    <TextView
+                        android:id="@+id/shopAddressLabel2Tv"
+                        style="@style/TextAppearance.Material3.LabelSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/shopName2Tv"
+                        android:layout_marginTop="5dp"
+                        android:layout_toEndOf="@id/selectedShop2Iv"
+                        android:text="Store Address:" />
+
+                    <TextView
+                        android:id="@+id/shopAddress2Tv"
+                        style="@style/TextAppearance.Material3.LabelSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/shopAddressLabel2Tv"
+                        android:layout_toEndOf="@id/selectedShop2Iv"
+                        android:ellipsize="end"
+                        android:lines="2"
+                        tools:text="@tools:sample/lorem[20]" />
+
+                    <TextView
+                        android:id="@+id/shopPhoneLabel2Tv"
+                        style="@style/TextAppearance.Material3.LabelSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/shopAddress2Tv"
+                        android:layout_marginTop="5dp"
+                        android:layout_toEndOf="@id/selectedShop2Iv"
+                        android:text="Phone Number: " />
+
+                    <TextView
+                        android:id="@+id/shopPhone2Tv"
+                        style="@style/TextAppearance.Material3.LabelSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/shopAddress2Tv"
+                        android:layout_marginTop="5dp"
+                        android:layout_toEndOf="@id/shopPhoneLabel2Tv"
+                        tools:text="@tools:sample/us_phones" />
+
+                    <TextView
+                        android:id="@+id/shopLatitudeLabel2Tv"
+                        style="@style/TextAppearance.Material3.LabelSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/shopPhone2Tv"
+                        android:layout_toEndOf="@id/selectedShop2Iv"
+                        android:text="Latitude: " />
+
+                    <TextView
+                        android:id="@+id/shopLatitude2Tv"
+                        style="@style/TextAppearance.Material3.LabelSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/shopPhone2Tv"
+                        android:layout_toEndOf="@id/shopLatitudeLabel2Tv"
+                        tools:text="12.34567890" />
+
+                    <TextView
+                        android:id="@+id/shopLongitudeLabel2Tv"
+                        style="@style/TextAppearance.Material3.LabelSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/shopLatitude2Tv"
+                        android:layout_toEndOf="@id/selectedShop2Iv"
+                        android:text="Longitude: " />
+
+                    <TextView
+                        android:id="@+id/shopLongitude2Tv"
+                        style="@style/TextAppearance.Material3.LabelSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/shopLatitude2Tv"
+                        android:layout_toEndOf="@id/shopLongitudeLabel2Tv"
+                        tools:text="45.6789012" />
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/generateRouteBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:minHeight="55dp"
+        android:text="Generate Route"
+        app:icon="@drawable/route_white" />
+
+
+</RelativeLayout>

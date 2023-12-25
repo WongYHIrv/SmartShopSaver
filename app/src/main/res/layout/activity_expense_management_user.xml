@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLinearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back01"
+    android:gravity="center|top"
+    android:orientation="vertical"
+    android:paddingLeft="20dp"
+    android:paddingTop="5dp"
+    android:paddingRight="20dp"
+    android:weightSum="5"
+    tools:context=".activities.ExpenseManagementUserActivity">
+
+    <com.anychart.AnyChartView
+        android:id="@+id/chart"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginVertical="28sp"
+        android:layout_weight="5"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/addExpensesButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Expenses"
+        android:textColor="@android:color/white"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/viewExpensesByDateButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="View Expenses By Date"
+        android:textColor="@android:color/white"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/viewAllExpensesButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Quick View Of All Expenses"
+        android:textColor="@android:color/white"
+        android:textSize="12sp" />
+
+
+</LinearLayout>

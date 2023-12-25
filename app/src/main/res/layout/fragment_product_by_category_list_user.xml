@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.ProductByCategoryListUserFragment">
+
+    <!--RelativeLayout: Search Chats-->
+    <RelativeLayout
+        android:id="@+id/searchRl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbarRl">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/searchCv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@+id/scanBtn"
+            app:cardCornerRadius="10dp"
+            app:cardUseCompatPadding="true">
+
+            <!--EditText: Input Query to search chats-->
+            <EditText
+                android:id="@+id/searchEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:drawableStart="@drawable/search_gray"
+                android:drawablePadding="10dp"
+                android:hint="Search"
+                android:padding="10dp" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <ImageButton
+            android:id="@+id/scanBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/shape_button_bg"
+            android:padding="5dp"
+            android:src="@drawable/scanner_white" />
+
+    </RelativeLayout>
+
+    <!--Products-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/productsRv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/searchRl"
+        android:clipToPadding="false"
+        android:paddingBottom="75dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/row_product_user" />
+
+</RelativeLayout>

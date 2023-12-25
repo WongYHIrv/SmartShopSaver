@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.ProductDetailsSellersActivity">
+
+    <!--Toolbar-->
+    <RelativeLayout
+        android:id="@+id/toolbarRl"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@drawable/toolbar_bg">
+
+        <ImageButton
+            android:id="@+id/toolbarBackBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:padding="10dp"
+            android:src="@drawable/back_white" />
+
+        <TextView
+            android:id="@+id/toolbarTitleTv"
+            style="@style/TextAppearance.Material3.BodyLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Product Details"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbarRl"
+        android:padding="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/productImageIv"
+                android:layout_width="100dp"
+                android:layout_height="120dp"
+                android:layout_centerHorizontal="true"
+                android:background="@color/gray"
+                android:scaleType="centerCrop"
+                app:shapeAppearanceOverlay="@style/ImageStyle_Corners_Rounded" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/productDiscountNoteCv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="5dp"
+                app:contentPadding="3dp">
+
+                <TextView
+                    android:id="@+id/productDiscountNoteTv"
+                    style="@style/TextAppearance.MaterialComponents.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:textSize="8dp"
+                    tools:text="10% off" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!--product Name-->
+            <TextView
+                android:id="@+id/productNameLabelTv"
+                style="@style/TextAppearance.Material3.LabelLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/productImageIv"
+                android:layout_marginTop="10dp"
+                android:text="Name"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/productNameTv"
+                style="@style/TextAppearance.Material3.LabelSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/productNameLabelTv"
+                tools:text="@tools:sample/lorem[3]" />
+
+            <!--product Description-->
+            <TextView
+                android:id="@+id/productDescriptionLabelTv"
+                style="@style/TextAppearance.Material3.LabelLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/productNameTv"
+                android:layout_marginTop="8dp"
+                android:text="Description"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/productDescriptionTv"
+                style="@style/TextAppearance.Material3.LabelSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/productDescriptionLabelTv"
+                tools:text="@tools:sample/lorem[20]" />
+
+            <!--product Barcode-->
+            <TextView
+                android:id="@+id/productBarcodeLabelTv"
+                style="@style/TextAppearance.Material3.LabelLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/productDescriptionTv"
+                android:layout_marginTop="8dp"
+                android:text="Barcode"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/productBarcodeTv"
+                style="@style/TextAppearance.Material3.LabelSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/productBarcodeLabelTv"
+                tools:text="@tools:sample/us_zipcodes" />
+
+            <!--product Category-->
+            <TextView
+                android:id="@+id/productCategoryLabelTv"
+                style="@style/TextAppearance.Material3.LabelLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/productBarcodeTv"
+                android:layout_marginTop="8dp"
+                android:text="Category"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/productCategoryTv"
+                style="@style/TextAppearance.Material3.LabelSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/productCategoryLabelTv"
+                tools:text="@tools:sample/lorem[1]" />
+
+            <!--Product Sub Category-->
+            <TextView
+                android:id="@+id/productSubCategoryLabelTv"
+                style="@style/TextAppearance.Material3.LabelLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/productCategoryTv"
+                android:layout_marginTop="8dp"
+                android:text="Sub Category"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/productSubCategoryTv"
+                style="@style/TextAppearance.Material3.LabelSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/productSubCategoryLabelTv"
+                tools:text="@tools:sample/lorem[1]" />
+
+            <!--Product Stock-->
+            <TextView
+                android:id="@+id/productStockLabelTv"
+                style="@style/TextAppearance.Material3.LabelLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/productSubCategoryTv"
+                android:layout_marginTop="8dp"
+                android:text="Stock"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/productStockTv"
+                style="@style/TextAppearance.Material3.LabelSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/productStockLabelTv"
+                tools:text="147" />
+
+            <!--product Date-->
+            <TextView
+                android:id="@+id/productDateLabelTv"
+                style="@style/TextAppearance.Material3.LabelLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/productStockTv"
+                android:layout_marginTop="8dp"
+                android:text="Date Added"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/productDateTv"
+                style="@style/TextAppearance.Material3.LabelSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/productDateLabelTv"
+                tools:text="@tools:sample/date/ddmmyy" />
+
+            <!--product Date Expire-->
+            <TextView
+                android:id="@+id/productDateExpireLabelTv"
+                style="@style/TextAppearance.Material3.LabelLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/productDateTv"
+                android:layout_marginTop="8dp"
+                android:text="Date Expire"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/productDateExpireTv"
+                style="@style/TextAppearance.Material3.LabelSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/productDateExpireLabelTv"
+                tools:text="@tools:sample/date/ddmmyy" />
+
+
+            <!--product Seller-->
+            <TextView
+                android:id="@+id/productSellerLabelTv"
+                style="@style/TextAppearance.Material3.LabelLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/productDateExpireTv"
+                android:layout_marginTop="8dp"
+                android:text="Seller"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/productSellerTv"
+                style="@style/TextAppearance.Material3.LabelSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/productSellerLabelTv"
+                tools:text="@tools:sample/full_names" />
+
+            <!--Product Price-->
+            <TextView
+                android:id="@+id/productPriceLabelTv"
+                style="@style/TextAppearance.Material3.LabelLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/productSellerTv"
+                android:layout_marginTop="8dp"
+                android:text="Price"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/priceLl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/productPriceLabelTv"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/originalPriceSymbolTv"
+                    style="@style/TextAppearance.Material3.LabelSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/currency_symbol" />
+
+                <TextView
+                    android:id="@+id/originalPriceTv"
+                    style="@style/TextAppearance.Material3.LabelSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    tools:text="12.89" />
+
+                <TextView
+                    android:id="@+id/discountedPriceSymbolTv"
+                    style="@style/TextAppearance.Material3.LabelSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/currency_symbol" />
+
+                <TextView
+                    android:id="@+id/discountedPriceTv"
+                    style="@style/TextAppearance.Material3.LabelSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="10.89" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/priceGraphRl"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_below="@id/priceLl"
+                android:layout_marginTop="8dp">
+
+                <com.anychart.AnyChartView
+                    android:id="@+id/priceGraphAcv"
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:text="Any Chart Trial Version"
+                    android:textSize="10sp" />
+
+                <View
+                    android:layout_width="110dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/white" />
+
+                <ProgressBar
+                    android:id="@+id/priceGraphPb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

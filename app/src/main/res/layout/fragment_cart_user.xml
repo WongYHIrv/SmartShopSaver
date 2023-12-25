@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.CartUserFragment">
+
+    <TextView
+        android:id="@+id/titleTv"
+        style="@style/TextAppearance.Material3.BodyLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Cart" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/calculationsCv"
+        android:layout_below="@+id/titleTv"
+        android:layout_marginTop="10dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/cartRv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:nestedScrollingEnabled="false"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/row_cart_user" />
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/calculationsCv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/placeOrderBtn"
+        app:cardCornerRadius="10dp"
+        app:cardUseCompatPadding="true"
+        app:contentPadding="15dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--Sub Total-->
+            <TextView
+                android:id="@+id/subtotalLabelTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sub Total" />
+
+            <TextView
+                android:id="@+id/subtotalSymbolTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@+id/subtotalTv"
+                android:text="@string/currency_symbol" />
+
+            <TextView
+                android:id="@+id/subtotalTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                tools:text="180.45" />
+
+            <!--Delivery Charges-->
+            <TextView
+                android:id="@+id/deliveryChargesLabelTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/subtotalLabelTv"
+                android:text="Delivery Charges" />
+
+            <TextView
+                android:id="@+id/deliveryChargesSymbolTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/subtotalLabelTv"
+                android:layout_toStartOf="@+id/deliveryChargesTv"
+                android:text="@string/currency_symbol" />
+
+            <TextView
+                android:id="@+id/deliveryChargesTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/subtotalLabelTv"
+                android:layout_alignParentEnd="true"
+                tools:text="10.21" />
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="match_parent"
+                android:layout_height="0.3dp"
+                android:layout_below="@+id/deliveryChargesLabelTv"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:background="@color/gray" />
+
+            <!--Total-->
+            <TextView
+                android:id="@+id/totalLabelTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/view1"
+                android:text="Total" />
+
+            <TextView
+                android:id="@+id/totalSymbolTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/view1"
+                android:layout_toStartOf="@+id/totalChargesTv"
+                android:text="@string/currency_symbol" />
+
+            <TextView
+                android:id="@+id/totalChargesTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/view1"
+                android:layout_alignParentEnd="true"
+                tools:text="190.66" />
+
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/placeOrderBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:minHeight="@dimen/m_button_height"
+        android:text="Place Order"
+        app:icon="@drawable/wallet_white" />
+
+</RelativeLayout>

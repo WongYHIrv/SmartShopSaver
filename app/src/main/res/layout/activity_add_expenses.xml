@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/add_expensesLinearLayout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back01"
+    tools:context=".activities.AddExpenses">
+
+    <!-- Toolbar -->
+    <RelativeLayout
+        android:id="@+id/expensesToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:background="@drawable/shape_toolbar02">
+
+        <!-- Back Button -->
+        <ImageButton
+            android:id="@+id/backBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@android:color/transparent"
+            android:padding="5dp"
+            android:src="@drawable/ic_back_black" />
+
+        <ImageView
+            android:id="@+id/SCIcon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_below="@id/backBtn"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-10dp"
+            android:src="@drawable/ic_money_black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/SCIcon"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="Add Expenses"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:scrollbarSize="28sp" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/dateLl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/expensesToolbar"
+        android:layout_marginTop="25dp">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Date of Expense"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="50dp"
+            android:textSize="18dp"
+            android:textColor="@android:color/black"/>
+
+        <TextView
+            android:id="@+id/selectDateTextView"
+            android:layout_below="@id/expensesToolbar"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:drawableStart="@drawable/ic_calendar"
+            android:paddingStart="10dp"
+            android:drawablePadding="60dp"
+            android:text="Select Date"
+            android:layout_centerHorizontal="true"
+            android:textSize="16sp"
+            android:textColor="@android:color/darker_gray"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/spinnerLinearLayout"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:paddingTop="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/dateLl"
+        android:layout_centerHorizontal="true">
+
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_marginTop="10dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/categoryLl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/spinnerLinearLayout"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Category Selection"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="30dp"
+            android:textSize="18dp"
+            android:textColor="@android:color/black"/>
+        <EditText
+            android:id="@+id/categoryEditText"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:hint="Category"
+            android:textColorHint="@android:color/darker_gray"
+            android:backgroundTint="@android:color/darker_gray"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            android:paddingTop="10dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@id/categoryLl"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp">
+
+        <Button
+            android:id="@+id/addCategoryButton"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Add \nCategory"
+            android:textSize="12sp"
+            android:layout_marginEnd="5dp"/>
+
+        <Button
+            android:id="@+id/updateCategoryButton"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Update Category"
+            android:textSize="12sp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"/>
+
+        <Button
+            android:id="@+id/deleteCategoryButton"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Delete Category"
+            android:textSize="12sp"
+            android:layout_marginStart="5dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/expensesAmountLl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/categoryLl"
+        android:layout_marginTop="90dp">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Expenses Amount"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="40dp"
+            android:textSize="18dp"
+            android:textColor="@android:color/black"/>
+
+        <EditText
+            android:id="@+id/expensesEditText"
+            android:layout_below="@id/expensesToolbar"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:drawableStart="@drawable/ic_money_gray"
+            android:paddingStart="5dp"
+            android:drawablePadding="20dp"
+            android:text=""
+            android:layout_centerHorizontal="true"
+            android:textSize="16sp"
+            android:textColor="@android:color/darker_gray"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/addToDbButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/expensesAmountLl"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:text="Add Expense"/>
+
+</RelativeLayout>

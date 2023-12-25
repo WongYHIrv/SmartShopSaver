@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.ReceiptListUserActivity">
+
+    <!-- Toolbar -->
+    <RelativeLayout
+        android:id="@+id/expensesToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_toolbar02">
+
+        <!-- Back Button -->
+        <ImageButton
+            android:id="@+id/backBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@android:color/transparent"
+            android:padding="5dp"
+            android:src="@drawable/ic_back_black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="Add New Receipt"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:scrollbarSize="28sp" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/textFieldLl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/expensesToolbar">
+
+        <!-- Input Title -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/receiptTitle"
+            style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="10dp"
+            app:hintEnabled="true">
+
+            <EditText
+                android:id="@+id/receiptNameEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_receipt"
+                android:drawablePadding="10dp"
+                android:hint="Receipt Name"
+                android:inputType="textMultiLine|textCapSentences"
+                android:padding="10dp"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Input Title -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/receiptLocation"
+            style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="5dp"
+            app:hintEnabled="true">
+
+            <EditText
+                android:id="@+id/receiptLocationEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_location_gray"
+                android:drawablePadding="10dp"
+                android:hint="Location"
+                android:inputType="textMultiLine|textCapSentences"
+                android:padding="10dp"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Input Title -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/expenseCat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            app:hintEnabled="true">
+
+            <EditText
+                android:id="@+id/receiptAmountEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_money_gray"
+                android:drawablePadding="10dp"
+                android:hint="Expense Amount"
+                android:inputType="textCapSentences"
+                android:padding="10dp"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/dateTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_calendar"
+            android:drawablePadding="10dp"
+            android:paddingLeft="15dp"
+            android:text="Select Date"
+            android:textSize="16sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="left|center"
+            android:layout_marginLeft="30dp"
+            android:clickable="true" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/selectionLl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/textFieldLl"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="5dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/inputImageBtn"
+            android:text="Take Image"
+            app:cornerRadius="5dp"
+            app:icon="@drawable/baseline_add_a_photo_24"
+            android:layout_weight="1"
+            android:textSize="12sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/recognizeTextBtn"
+            android:layout_width="match_parent"
+            app:cornerRadius="5dp"
+            app:icon="@drawable/baseline_document_scanner_24"
+            android:layout_weight="1"
+            android:layout_marginStart="5dp"
+            android:text="Recognize Text"
+            android:textSize="12sp"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/expensesSv"
+        android:layout_width="match_parent"
+        android:layout_height="480dp"
+        android:layout_below="@id/selectionLl">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imageIv"
+                android:layout_marginTop="5dp"
+                android:layout_width="350dp"
+                android:layout_height="350dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_image"
+                app:strokeWidth="2dp"
+                android:layout_gravity="center_horizontal"
+                />
+
+            <TextView
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="Content:"/>
+
+            <EditText
+                android:id="@+id/recognizedTextEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:textSize="12sp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- Button -->
+    <Button
+        android:id="@+id/submitBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/expensesSv"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="5dp"
+        android:text="Upload"
+        android:textColor="@color/white"/>
+
+
+</RelativeLayout>

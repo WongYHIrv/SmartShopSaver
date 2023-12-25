@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".activities.MainActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/logoIv"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/logo" />
+
+        <TextView
+            android:id="@+id/labelTv"
+            style="@style/TextAppearance.Material3.BodyLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/logoIv"
+            android:layout_marginTop="20dp"
+            android:text="@string/welcome_to"
+            android:textAlignment="center" />
+
+    </RelativeLayout>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/loginBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/registerUserBtn"
+        android:minHeight="@dimen/m_button_height"
+        android:text="Login"
+        app:icon="@drawable/person_white" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/registerUserBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/registerSellerBtn"
+        android:minHeight="@dimen/m_button_height"
+        android:text="Register User"
+        app:icon="@drawable/person_add_white" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/registerSellerBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:minHeight="@dimen/m_button_height"
+        android:text="Register Seller"
+        app:icon="@drawable/business_add_white" />
+
+</RelativeLayout>

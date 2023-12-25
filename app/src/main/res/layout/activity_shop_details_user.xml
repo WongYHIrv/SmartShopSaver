@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.ShopDetailsUserActivity">
+
+    <!--Toolbar-->
+    <RelativeLayout
+        android:id="@+id/toolbarRl"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@drawable/toolbar_bg">
+
+        <ImageButton
+            android:id="@+id/toolbarBackBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:padding="10dp"
+            android:src="@drawable/back_white" />
+
+        <TextView
+            android:id="@+id/toolbarTitleTv"
+            style="@style/TextAppearance.Material3.BodyLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Shop Details"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbarRl">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/orderInfoLabelTv"
+                    style="@style/TextAppearance.Material3.BodyLarge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Shop Info"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="100dp"
+                    android:layout_height="0.5dp"
+                    android:layout_below="@id/orderInfoLabelTv"
+                    android:layout_marginTop="2dp"
+                    android:background="@color/gray" />
+
+                <TextView
+                    android:id="@+id/shopNameLabelTv"
+                    style="@style/TextAppearance.Material3.BodySmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/orderInfoLabelTv"
+                    android:layout_marginTop="5dp"
+                    android:text="Shop Name: " />
+
+                <TextView
+                    android:id="@+id/shopNameTv"
+                    style="@style/TextAppearance.Material3.BodySmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/orderInfoLabelTv"
+                    android:layout_marginTop="5dp"
+                    android:layout_toEndOf="@+id/shopNameLabelTv"
+                    tools:text="@tools:sample/full_names" />
+
+                <TextView
+                    android:id="@+id/shopOwnerLabelTv"
+                    style="@style/TextAppearance.Material3.BodySmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/shopNameTv"
+                    android:layout_marginTop="5dp"
+                    android:text="Shop Owner: " />
+
+                <TextView
+                    android:id="@+id/shopOwnerTv"
+                    style="@style/TextAppearance.Material3.BodySmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/shopNameTv"
+                    android:layout_marginTop="5dp"
+                    android:layout_toEndOf="@+id/shopOwnerLabelTv"
+                    tools:text="@tools:sample/full_names" />
+
+                <TextView
+                    android:id="@+id/descriptionLabelTv"
+                    style="@style/TextAppearance.Material3.BodySmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/shopOwnerTv"
+                    android:layout_marginTop="5dp"
+                    android:text="Description: " />
+
+                <TextView
+                    android:id="@+id/descriptionTv"
+                    style="@style/TextAppearance.Material3.BodySmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/descriptionLabelTv"
+                    android:layout_marginTop="5dp"
+                    tools:text="@tools:sample/lorem[20]" />
+
+            </RelativeLayout>
+
+            <TextView
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Shop Products"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="120dp"
+                android:layout_height="0.5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="2dp"
+                android:background="@color/gray" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/orderProductsRv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/row_product_user" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

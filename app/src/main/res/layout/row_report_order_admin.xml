@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="2dp"
+    app:cardUseCompatPadding="true"
+    app:contentPadding="8dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/orderIdLabelTv"
+            style="@style/TextAppearance.Material3.BodyMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/productImageIv"
+            android:text="ORDER ID: " />
+
+        <TextView
+            android:id="@+id/orderIdTv"
+            style="@style/TextAppearance.Material3.BodyMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/orderIdLabelTv"
+            tools:text="123456" />
+
+        <TextView
+            android:id="@+id/reportLabelTv"
+            style="@style/TextAppearance.Material3.BodySmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/orderIdTv"
+            android:layout_marginTop="4dp"
+            android:text="Report: " />
+
+        <TextView
+            android:id="@+id/reportTv"
+            style="@style/TextAppearance.Material3.BodySmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/orderIdTv"
+            android:layout_marginTop="4dp"
+            android:layout_toEndOf="@+id/reporterLabelTv"
+            android:ellipsize="end"
+            android:lines="2"
+            tools:text="@tools:sample/lorem/random" />
+
+        <TextView
+            android:id="@+id/reporterLabelTv"
+            style="@style/TextAppearance.Material3.BodySmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/reportTv"
+            android:layout_marginTop="4dp"
+            android:text="Reporter: " />
+
+        <TextView
+            android:id="@+id/reporterTv"
+            style="@style/TextAppearance.Material3.BodySmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/reportTv"
+            android:layout_marginTop="4dp"
+            android:layout_toStartOf="@+id/dateTv"
+            android:layout_toEndOf="@+id/reporterLabelTv"
+            tools:text="@tools:sample/full_names" />
+
+        <TextView
+            android:id="@+id/sellerLabelTv"
+            style="@style/TextAppearance.Material3.BodySmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/reporterTv"
+            android:layout_marginTop="4dp"
+            android:text="Seller: " />
+
+        <TextView
+            android:id="@+id/sellerTv"
+            style="@style/TextAppearance.Material3.BodySmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/reporterTv"
+            android:layout_marginTop="4dp"
+            android:layout_toStartOf="@+id/dateTv"
+            android:layout_toEndOf="@+id/reporterLabelTv"
+            tools:text="@tools:sample/full_names" />
+
+        <TextView
+            android:id="@+id/dateTv"
+            style="@style/TextAppearance.Material3.BodySmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="4dp"
+            tools:text="@tools:sample/date/ddmmyy" />
+
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>

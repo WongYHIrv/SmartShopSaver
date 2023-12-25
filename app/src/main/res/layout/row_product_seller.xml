@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="2dp"
+    app:cardUseCompatPadding="true"
+    app:contentPadding="5dp"
+    app:strokeColor="@android:color/transparent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/productImageRl"
+            android:layout_width="90dp"
+            android:layout_height="118dp"
+            android:layout_marginEnd="5dp">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/productImageIv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/gray"
+                android:scaleType="centerCrop"
+                app:shapeAppearanceOverlay="@style/ImageStyle_Corners_Rounded"
+                tools:src="@tools:sample/backgrounds/scenic" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/productDiscountNoteCv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                app:contentPadding="3dp">
+
+                <TextView
+                    android:id="@+id/productDiscountNoteTv"
+                    style="@style/TextAppearance.MaterialComponents.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:textSize="8dp"
+                    tools:text="10% off" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/productExpireNoteCv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="5dp"
+                app:cardBackgroundColor="@color/colorAccent"
+                app:contentPadding="3dp">
+
+                <TextView
+                    android:id="@+id/productExpireNoteTv"
+                    style="@style/TextAppearance.MaterialComponents.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:gravity="center"
+                    android:text="Expired"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="8dp" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/productNameTv"
+            style="@style/TextAppearance.Material3.BodyLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@+id/optionsBtn"
+            android:layout_toEndOf="@id/productImageRl"
+            android:ellipsize="end"
+            android:maxLines="1"
+            tools:text="@tools:sample/lorem[5]" />
+
+        <TextView
+            android:id="@+id/productDescriptionTv"
+            style="@style/TextAppearance.Material3.BodySmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/productNameTv"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/productImageRl"
+            android:ellipsize="end"
+            android:lines="2"
+            tools:text="@tools:sample/lorem[15]" />
+
+        <TextView
+            android:id="@+id/stockLabelTv"
+            style="@style/TextAppearance.Material3.LabelSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/productDescriptionTv"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/productImageRl"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="Stock:" />
+
+        <TextView
+            android:id="@+id/stockTv"
+            style="@style/TextAppearance.Material3.LabelSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/productDescriptionTv"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/stockLabelTv"
+            android:ellipsize="end"
+            android:lines="1"
+            tools:text="1234" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/productDescriptionTv"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/originalPriceSymbolTv"
+                style="@style/TextAppearance.Material3.LabelSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/currency_symbol" />
+
+            <TextView
+                android:id="@+id/originalPriceTv"
+                style="@style/TextAppearance.Material3.LabelSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                tools:text="12.89" />
+
+            <TextView
+                android:id="@+id/discountedPriceSymbolTv"
+                style="@style/TextAppearance.Material3.LabelSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/currency_symbol" />
+
+            <TextView
+                android:id="@+id/discountedPriceTv"
+                style="@style/TextAppearance.Material3.LabelSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="10.89" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/productCategoryTv"
+            style="@style/TextAppearance.Material3.LabelSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/stockLabelTv"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/productImageRl"
+            android:ellipsize="end"
+            android:lines="1"
+            tools:text="@tools:sample/lorem[2]" />
+
+        <TextView
+            android:id="@+id/productCategorySeparatorTv"
+            style="@style/TextAppearance.Material3.LabelSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/stockLabelTv"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/productCategoryTv"
+            android:text=" > " />
+
+        <TextView
+            android:id="@+id/productSubCategoryTv"
+            style="@style/TextAppearance.Material3.LabelSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/stockLabelTv"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/productCategorySeparatorTv"
+            android:ellipsize="end"
+            android:lines="1"
+            tools:text="@tools:sample/lorem[2]" />
+
+
+        <TextView
+            android:id="@+id/productDateAddedLabelTv"
+            style="@style/TextAppearance.Material3.LabelSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/productSubCategoryTv"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@+id/productImageRl"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="Added: " />
+
+        <TextView
+            android:id="@+id/productDateAddedTv"
+            style="@style/TextAppearance.Material3.LabelSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/productSubCategoryTv"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@+id/productDateAddedLabelTv"
+            android:ellipsize="end"
+            android:lines="1"
+            tools:text="@tools:sample/date/ddmmyy" />
+
+
+        <TextView
+            android:id="@+id/productDateExpireLabelTv"
+            style="@style/TextAppearance.Material3.LabelSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/productSubCategoryTv"
+            android:layout_marginTop="5dp"
+            android:layout_toStartOf="@+id/productDateExpireTv"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="Expire: " />
+
+        <TextView
+            android:id="@+id/productDateExpireTv"
+            style="@style/TextAppearance.Material3.LabelSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/productSubCategoryTv"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="5dp"
+            android:ellipsize="end"
+            android:lines="1"
+            tools:text="@tools:sample/date/ddmmyy" />
+
+        <ImageButton
+            android:id="@+id/optionsBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:background="@android:color/transparent"
+            android:padding="5dp"
+            android:src="@drawable/more_gray" />
+
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>
