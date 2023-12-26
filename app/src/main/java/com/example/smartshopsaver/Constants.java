@@ -2,7 +2,7 @@ package com.example.smartshopsaver;
 
 public class Constants {
 
-    public static final String FCM_SERVER_KEY = "AAAAAWSzmZs:APA91bHZN_dM3PZTy2qbF0iRqFfmGTPqFAI77N4rAGx96m2lSFo2xQyodBNSoMNe6wm9V0znxVZBnGXqtW6-uzzgultWz7GKzo-iuTLyVvt6WeBJx6p73wfD2Iu7KUGYw3Za36rBcLZ-";
+    public static final String FCM_SERVER_KEY = "YOUR_FCM_SERVER_KEY";
     public static final String NOTIFICATION_TYPE_ORDER_NEW = "NOTIFICATION_TYPE_ORDER_NEW";
     public static final String NOTIFICATION_TYPE_ORDER_UPDATE = "NOTIFICATION_TYPE_ORDER_UPDATE";
     public static final String NOTIFICATION_TYPE_REPORT_PRODUCT = "NOTIFICATION_TYPE_REPORT_PRODUCT";
