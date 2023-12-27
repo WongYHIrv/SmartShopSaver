@@ -93,7 +93,7 @@ public class ExpenseManagementUserActivity extends AppCompatActivity {
     public void queryForPie(){
         Cursor res = db.getdata();
         if(res.getCount()==0){
-            chart.setVisibility(View.GONE);
+            chart.setVisibility(View.VISIBLE);
             Toast.makeText(ExpenseManagementUserActivity.this, "No Entry Exists", Toast.LENGTH_SHORT).show();
         }
         StringBuffer buffer = new StringBuffer();
