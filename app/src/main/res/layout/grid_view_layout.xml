@@ -13,20 +13,20 @@
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:text="Category Type: "
-        android:textColor="@android:color/white"/>
+        android:textColor="@android:color/black"/>
 
     <TextView
         android:id="@+id/priceTextView"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:text="Expense Amt  : "
-        android:textColor="@android:color/white"/>
+        android:textColor="@android:color/black"/>
 
     <TextView
         android:id="@+id/dateTextView"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:text="Date Added    : "
-        android:textColor="@android:color/white"/>
+        android:textColor="@android:color/black"/>
 
 </LinearLayout>
