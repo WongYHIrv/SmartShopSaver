@@ -1,25 +1,25 @@
 {
   "project_info": {
     "project_number": "5984459163",
-    "firebase_url": "https://smartshopsaver-ec423-default-rtdb.firebaseio.com",
+    "firebase_url": "FIREBASE_URL",
     "project_id": "smartshopsaver-ec423",
-    "storage_bucket": "smartshopsaver-ec423.appspot.com"
+    "storage_bucket": "STORAGE_BUCKET_LINK"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:5984459163:android:4fa4c0d50d8451f1fca93e",
+        "mobilesdk_app_id": "SDK_ID",
         "android_client_info": {
-          "package_name": "com.example.smartshopsaver"
+          "package_name": "PACKAGE_NAME"
         }
       },
       "oauth_client": [
         {
-          "client_id": "5984459163-7l6t8i7oao8r5hqsead1u9padmu9ukdo.apps.googleusercontent.com",
+          "client_id": "OAUTH_CLIENT",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.smartshopsaver",
-            "certificate_hash": "ed3af8028fb9ae4aae14f23df705cf48a50647fd"
+            "certificate_hash": "HASH_CERT"
           }
         },
         {
